@@ -21,7 +21,8 @@ class TableViewCell: UITableViewCell {
         
     }
     
-    func configure() {
+    func configure(item: SampleItem) {
         
+        label.text = item.title
     }
 }

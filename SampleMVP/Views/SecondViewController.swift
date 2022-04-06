@@ -14,9 +14,24 @@ final class SecondViewController: UIViewController {
         return vc
     }
     
+    @IBOutlet weak private var label: UILabel!
+    //ここでPresenterとViewControllerを繋げる
+    private var presenter: PresenterInput!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func inject(presenter: PresenterInput) {
         
+        self.presenter = presenter
+    }
+}
+
+extension SecondViewController: PresenterOutput {
+    
+    func update(text: String) {
         
+        label.text = text
     }
 }

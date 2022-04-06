@@ -39,6 +39,7 @@
                             <constraint firstItem="N7M-zb-Bnj" firstAttribute="top" secondItem="WC3-48-Xdo" secondAttribute="bottom" constant="100" id="rI7-W6-5OT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BSZ-xm-zdk"/>
                     <connections>
                         <outlet property="label" destination="WC3-48-Xdo" id="Due-14-s2o"/>
                         <outlet property="tableView" destination="N7M-zb-Bnj" id="lPT-0Y-czl"/>
@@ -46,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+            <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

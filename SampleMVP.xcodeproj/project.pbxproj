@@ -111,7 +111,10 @@
 		0E49047627F99009004391C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0E49048427F99F56004391C0 /* Controllers */,
+				0E49048527F9A146004391C0 /* First.storyboard */,
+				0E49046E27F98F43004391C0 /* FirstViewController.swift */,
+				0E49047C27F994A5004391C0 /* Second.storyboard */,
+				0E49047E27F994B4004391C0 /* SecondViewController.swift */,
 				0E49048127F9971F004391C0 /* TableViewCell.xib */,
 				0E49048027F9971F004391C0 /* TableViewCell.swift */,
 			);
@@ -124,17 +127,6 @@
 				0E49047A27F990FF004391C0 /* Presenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		0E49048427F99F56004391C0 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0E49048527F9A146004391C0 /* First.storyboard */,
-				0E49046E27F98F43004391C0 /* FirstViewController.swift */,
-				0E49047C27F994A5004391C0 /* Second.storyboard */,
-				0E49047E27F994B4004391C0 /* SecondViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		0EF30AF627E766CE00B27F77 = {
