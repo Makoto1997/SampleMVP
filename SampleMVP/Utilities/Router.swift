@@ -9,6 +9,11 @@ import UIKit
 
 final class Router {
     
+    static let shared: Router = .init()
+    private init() {}
+    
+    private (set) var window: UIWindow?
+    
     static func showRoot(window: UIWindow?) {
         
         let vc = FirstViewController.makeFromStoryboard()
@@ -17,5 +22,20 @@ final class Router {
         let rootVC = UINavigationController(rootViewController: vc)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
+    }
+    
+    private static func show(from: UIViewController, next: UIViewController, animated: Bool = true) {
+        
+        if let nav = from.navigationController {
+            nav.pushViewController(next, animated: animated)
+        } else {
+            from.present(next, animated: animated, completion: nil)
+        }
+    }
+    
+    static func showSecond(from: UIViewController) {
+        
+        let vc = SecondViewController.makeFromStoryboard()
+        show(from: from, next: vc)
     }
 }
