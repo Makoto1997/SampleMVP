@@ -14,7 +14,7 @@ final class FirstViewController: UIViewController {
         return vc
     }
     
-    private let cellNibName = "nibName"
+    private let cellNibName = "TableViewCell"
     private let cellIdentifier = "identifier"
     private var outputText = "なにも選択されていません"
     private var presenter: PresenterInput!

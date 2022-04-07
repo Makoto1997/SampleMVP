@@ -14,7 +14,7 @@ final class Router {
     
     private (set) var window: UIWindow?
     
-    static func showRoot(window: UIWindow?) {
+    func showRoot(window: UIWindow?) {
         
         let vc = FirstViewController.makeFromStoryboard()
         let presenter = Presenter(output: vc)
@@ -22,7 +22,23 @@ final class Router {
         let rootVC = UINavigationController(rootViewController: vc)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
+        self.window = window
     }
+    
+    static func showFirst(from: UIViewController) {
+        
+        let vc = FirstViewController.makeFromStoryboard()
+        show(from: from, next: vc)
+    }
+    
+    static func showSecond(from: UIViewController) {
+        
+        let vc = SecondViewController.makeFromStoryboard()
+        show(from: from, next: vc)
+    }
+}
+
+extension Router {
     
     private static func show(from: UIViewController, next: UIViewController, animated: Bool = true) {
         
@@ -31,11 +47,5 @@ final class Router {
         } else {
             from.present(next, animated: animated, completion: nil)
         }
-    }
-    
-    static func showSecond(from: UIViewController) {
-        
-        let vc = SecondViewController.makeFromStoryboard()
-        show(from: from, next: vc)
     }
 }
