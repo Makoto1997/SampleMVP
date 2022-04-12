@@ -2,18 +2,14 @@
 //  Storyboard+.swift
 //  SampleMVP
 //
-//  Created by Makoto on 2022/04/03.
+//  Created by Makoto on 2022/04/10.
 //
 
 import UIKit
 
 extension UIStoryboard {
     
-    static var firstViewController: FirstViewController {
-        UIStoryboard.init(name: "First", bundle: nil).instantiateInitialViewController() as! FirstViewController
-    }
-    
-    static var secondViewController: SecondViewController {
-        UIStoryboard.init(name: "Second", bundle: nil).instantiateInitialViewController() as! SecondViewController
+    static var searchViewController: SearchViewController {
+        UIStoryboard(name: "Search", bundle: nil).instantiateInitialViewController() as! SearchViewController
     }
 }
