@@ -43,7 +43,6 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("あああああああああああああああああああああああああ", searchBar.text ?? "なんもねえ")
         // presenterにAPI通信を任せる
         input.search(param: searchBar.text)
         searchBar.resignFirstResponder()
