@@ -10,31 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifier" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="SampleMVP" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="SampleMVP" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRC-DC-RVk">
-                        <rect key="frame" x="20" y="10" width="48" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-kn-yvx">
+                        <rect key="frame" x="20" y="15" width="42" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="zRC-DC-RVk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="NHx-Bg-w6W"/>
-                    <constraint firstAttribute="bottom" secondItem="zRC-DC-RVk" secondAttribute="bottom" constant="10" id="eLy-Ks-32M"/>
-                    <constraint firstItem="zRC-DC-RVk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kCH-a6-cXF"/>
+                    <constraint firstItem="YM7-kn-yvx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HXo-J0-f3I"/>
+                    <constraint firstItem="YM7-kn-yvx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="KZH-Wn-2kA"/>
+                    <constraint firstAttribute="bottom" secondItem="YM7-kn-yvx" secondAttribute="bottom" constant="15" id="zHB-Ur-um7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="label" destination="zRC-DC-RVk" id="m2v-5A-Ez3"/>
+                <outlet property="label" destination="YM7-kn-yvx" id="0My-qv-OoU"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="139" y="120"/>
         </tableViewCell>
     </objects>
 </document>

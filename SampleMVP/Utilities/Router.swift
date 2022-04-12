@@ -2,50 +2,33 @@
 //  Router.swift
 //  SampleMVP
 //
-//  Created by Makoto on 2022/04/03.
+//  Created by Makoto on 2022/04/08.
 //
 
 import UIKit
+import SafariServices
 
 final class Router {
     
-    static let shared: Router = .init()
-    private init() {}
-    
-    private (set) var window: UIWindow?
-    
-    func showRoot(window: UIWindow?) {
-        
-        let vc = FirstViewController.makeFromStoryboard()
-        let presenter = Presenter(output: vc)
-        vc.inject(presenter: presenter)
-        let rootVC = UINavigationController(rootViewController: vc)
-        window?.rootViewController = rootVC
-        window?.makeKeyAndVisible()
-        self.window = window
+    static func showRoot(window: UIWindow) {
+        let vc = UIStoryboard.searchViewController
+        let nav = UINavigationController(rootViewController: vc)
+        window.rootViewController = nav
+        window.makeKeyAndVisible()
     }
     
-    static func showFirst(from: UIViewController) {
+    static func showWeb(url: URL, from: UIViewController) {
         
-        let vc = FirstViewController.makeFromStoryboard()
-        show(from: from, next: vc)
+        let safariVC = SFSafariViewController(url: url)
+        from.present(safariVC, animated: true, completion: nil)
     }
     
-    static func showSecond(from: UIViewController) {
-        
-        let vc = SecondViewController.makeFromStoryboard()
-        show(from: from, next: vc)
-    }
-}
-
-extension Router {
-    
-    private static func show(from: UIViewController, next: UIViewController, animated: Bool = true) {
-        
-        if let nav = from.navigationController {
-            nav.pushViewController(next, animated: animated)
-        } else {
-            from.present(next, animated: animated, completion: nil)
-        }
+    static func showSearch(from: UIViewController) {
+        // ここでPresenterと繋げる
+        // PresenterとVCが参照しあうのでどちらかをweakにしないといけない
+        let vc = UIStoryboard.searchViewController
+        let presenter = SearchPresenter(output: vc)
+        vc.inject(input: presenter)
+        from.show(next: vc)
     }
 }
