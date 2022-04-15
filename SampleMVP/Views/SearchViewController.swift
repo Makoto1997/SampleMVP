@@ -14,6 +14,8 @@ final class SearchViewController: UIViewController {
         didSet {
             
             tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+            tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     
@@ -61,7 +63,6 @@ extension SearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         // i番目のModelをpresenterから貰うように問い合わせている
         let gitHubModel = input.item(index: indexPath.item)
-        // Modelを取得したらViewに渡す_textInputTraits    UITextInputTraits *    0x7f917d208da0    0x00007f917d208da0
         cell.configure(gitHubModel: gitHubModel)
         
         return cell

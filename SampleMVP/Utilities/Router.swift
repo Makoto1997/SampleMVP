@@ -12,6 +12,10 @@ final class Router {
     
     static func showRoot(window: UIWindow) {
         let vc = UIStoryboard.searchViewController
+        let presenter = SearchPresenter(output: vc)
+        // ここでPresenterと繋げる
+        // PresenterとVCが参照しあうのでどちらかをweakにしないといけない
+        vc.inject(input: presenter)
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav
         window.makeKeyAndVisible()
@@ -21,14 +25,5 @@ final class Router {
         
         let safariVC = SFSafariViewController(url: url)
         from.present(safariVC, animated: true, completion: nil)
-    }
-    
-    static func showSearch(from: UIViewController) {
-        // ここでPresenterと繋げる
-        // PresenterとVCが参照しあうのでどちらかをweakにしないといけない
-        let vc = UIStoryboard.searchViewController
-        let presenter = SearchPresenter(output: vc)
-        vc.inject(input: presenter)
-        from.show(next: vc)
     }
 }
